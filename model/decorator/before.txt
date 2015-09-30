@@ -1,0 +1,11 @@
+@startuml
+class Beverage {
+      description
+      getDescription()
+      cost()
+}
+Beverage <|-- HouseBlend
+Beverage <|-- DarkRoast
+Beverage <|-- Decaf
+Beverage <|-- Espresso
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+
+ISubject -right-> IObserver
+ISubject <|-- WeatherData
+IObserver <|-- BroadcastingCompanyDisplay
+WeatherData <-left- BroadcastingCompanyDisplay
+
+Interface ISubject {
+    +registerObserver()
+    +removeObserver()
+    +notifyObservers()
+}
+
+Interface IObserver {
+    +update()
+}
+@enduml
