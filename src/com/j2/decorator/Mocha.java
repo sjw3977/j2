@@ -1,8 +1,6 @@
 package com.j2.decorator;
 
 public class Mocha extends CondimentDecorator {
-  Beverage beverage;
-  
   public Mocha(Beverage beverage) {
     this.beverage = beverage;
   }
