@@ -13,15 +13,15 @@ public abstract class Pizza {
   }
   
   void bake() {
-    System.out.println("Baking " + name);
+    System.out.println("Baking...");
   }
   
   void cut() {
-    System.out.println("Cutting " + name);
+    System.out.println("Cutting...");
   }
   
   void box() {
-    System.out.println("Boxing " + name);
+    System.out.println("Boxing...");
   }
   
   public String getName() {

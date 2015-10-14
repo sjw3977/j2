@@ -8,7 +8,7 @@ public class PizzaTestDrive {
     Pizza pizza = store.orderPizza("cheese");
     System.out.println("We ordered a " + pizza.getName());
     
-    pizza = store.orderPizza("veggie");
+    pizza = store.orderPizza("potato");
     System.out.println("We ordered a " + pizza.getName());
   }
 }
