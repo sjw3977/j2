@@ -1,0 +1,18 @@
+@startuml
+
+abstract class PizzaStore {
+  +orderPizza(String):Pizza
+  -createPizza(String):Pizza
+}
+
+PizzaStore <|-- NYPizzaStore
+PizzaStore <|-- ChicagoPizzaStore
+
+Pizza <|-- ChicagoStylePizza
+ChicagoStylePizza <|-- ChicagoStyleCheesePizza
+ChicagoStylePizza <|-- ChicagoStyleVeggiePizza
+ChicagoStylePizza <|-- ChicagoStyleClamPizza
+ChicagoStylePizza <|-- ChicagoStylePepperoniPizza
+Pizza <|-- NYStyleCheesePizza
+
+@enduml
