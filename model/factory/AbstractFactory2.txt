@@ -3,6 +3,7 @@
 abstract class Pizza {
   String name
   Sauce sauce
+  Daugh daugh
   Veggies veggies[]
   Cheese cheese
   Pepperoni pepperoni
@@ -15,7 +16,7 @@ abstract class Pizza {
   +toString():String
 }
 abstract class PizzaStore {
-  #abstract orderPizza(String item):Pizza
+  #abstract createPizza(String item):Pizza
   +orderPizza(String type):Pizza
 }
 class ChicagoPizzaStore {
