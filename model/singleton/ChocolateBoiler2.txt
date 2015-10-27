@@ -1,0 +1,8 @@
+@startuml
+
+Client --> ChocolateBoiler:boiler=getInstance()
+Client --> ChocolateBoiler:fill()
+Client --> ChocolateBoiler:boil()
+Client --> ChocolateBoiler:drain()
+
+@enduml
