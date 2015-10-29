@@ -19,7 +19,13 @@ public class PrinterSpooler {
   }
   
   public void print() {
-    printed = true;
+    if (!isPrinted()) {
+      printed = true;
+    }
+  }
+  
+  public boolean isPrint() {
+    return printed;
   }
 }
   

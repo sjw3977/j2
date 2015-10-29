@@ -6,7 +6,10 @@ public class ChocolateBoiler {
   private boolean empty;
   private boolean boiled;
   
-  private ChocolateBoiler() { }
+  private ChocolateBoiler() {
+    empty = true;
+    boiled = false;
+  }
   
   public static synchronized ChocolateBoiler getInstance() {
     if (uniqueInstance == null) {
