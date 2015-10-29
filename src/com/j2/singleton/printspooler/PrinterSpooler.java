@@ -1,6 +1,6 @@
 package com.j2.singleton.printspooler;
 
-public class PrinterSpooler {
+public class PrinterSpooler extends Thread{
   private static PrinterSpooler uniqueInstance;
   private static int numCalled = 0;
   private boolean printed;
@@ -9,7 +9,7 @@ public class PrinterSpooler {
     printed = false;  
   }
   
-  public static synchronized PrinterSpooler getInstance() {
+  public static PrinterSpooler getInstance() {
     if (uniqueInstance == null) {
       System.out.println("Creating unique instance of Printer Spooler");
       uniqueInstance = new PrinterSpooler();
@@ -18,8 +18,22 @@ public class PrinterSpooler {
     return uniqueInstance;
   }
   
+  public void run() {
+    synchronized(this){
+      fill();
+      print();
+      notify();
+    }
+  }
+  
+  public void fill() {
+    if (isPrint()) {
+      printed = false;
+    }
+  }
+  
   public void print() {
-    if (!isPrinted()) {
+    if (!isPrint()) {
       printed = true;
     }
   }
