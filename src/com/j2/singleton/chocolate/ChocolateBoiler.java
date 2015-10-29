@@ -8,7 +8,7 @@ public class ChocolateBoiler {
   
   private ChocolateBoiler() { }
   
-  public static ChocolateBoiler getInstance() {
+  public static synchronized ChocolateBoiler getInstance() {
     if (uniqueInstance == null) {
       System.out.println("Creating unique instance of Chocolate Boiler");
       uniqueInstance = new ChocolateBoiler();
