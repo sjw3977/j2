@@ -1,7 +1,7 @@
 package com.j2.singleton.chocolate;
 
 public class ChocolateBoiler {
-  private static ChocolateBoiler uniqueInstance;
+  private volatile static ChocolateBoiler uniqueInstance;
   private static int numCalled = 0;
   private boolean empty;
   private boolean boiled;
@@ -11,10 +11,14 @@ public class ChocolateBoiler {
     boiled = false;
   }
   
-  public static synchronized ChocolateBoiler getInstance() {
+  public static ChocolateBoiler getInstance() {
     if (uniqueInstance == null) {
-      System.out.println("Creating unique instance of Chocolate Boiler");
-      uniqueInstance = new ChocolateBoiler();
+      synchronized (ChocolateBoiler.class) {
+        if (uniqueInstance == null) {
+          System.out.println("Creating unique instance of Chocolate Boiler");
+          uniqueInstance = new ChocolateBoiler();
+        }
+      }
     }   
     System.out.println("numCalled: " + numCalled++);
     return uniqueInstance;

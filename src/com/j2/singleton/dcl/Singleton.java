@@ -8,13 +8,13 @@ public class Singleton {
   
   public static Singleton getInstance() {
     if (uniqueInstance == null) {
-      syncronized (Singleton.class) {
+      synchronized (Singleton.class) {
         if (uniqueInstance == null) {
           uniqueInstance = new Singleton();
         }
       }
-      System.out.println("numCalled: " + numCalled++);
-      return uniqueInstance;
+    }
+    System.out.println("numCalled: " + numCalled++);
+    return uniqueInstance;
   }
-}
 }
