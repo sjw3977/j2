@@ -1,0 +1,23 @@
+@startuml
+
+Interface Command {
+  +execute():void
+  +undo():void
+}
+class ConcreteCommand
+class Receiver {
+  +action()
+}
+class Client {
+}
+class Invoker {
+  +setCommand()
+  +buttonPressed()
+}
+Command <|.. ConcreteCommand
+ConcreteCommand -left-> Receiver
+Client --> Receiver
+Client -right-> Invoker
+Invoker -right-> Command
+
+@enduml
