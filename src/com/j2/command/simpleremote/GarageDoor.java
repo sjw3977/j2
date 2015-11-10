@@ -1,4 +1,4 @@
-package com.j2.command,simpleremote;
+package com.j2.command.simpleremote;
 
 public class GarageDoor {
   public GarageDoor() {}
