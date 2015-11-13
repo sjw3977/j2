@@ -1,6 +1,7 @@
 package com.j2.adapter.iterenum;
 
 import java.util.*;
+
 public class IteratorEnumeration implements Enumeration {
   Iterator iterator;
   
