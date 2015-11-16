@@ -1,7 +1,0 @@
-@startuml
-
-Client -right-> AutomaticDoor: pressOpen()
-Client --> KnobDoor: twistOpen()
-Client --> SlidingDoor: slideOpen()
-
-@enduml
