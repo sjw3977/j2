@@ -1,9 +1,0 @@
-@startuml
-
-Client --> SimpleRemoteControl:remote=new()
-Client --> Light:light=new()
-Client --> LightOnCommand:lighton=new(light)
-Client --> remote:setCommand(lighton)
-Client --> remote:buttonWasPressed()
-
-@enduml
