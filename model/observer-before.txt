@@ -1,0 +1,11 @@
+@startuml
+class WeatherData {
+    getTemperature()
+    getHumidity()
+    getPressure()
+    measurementsChanged()
+}
+WeatherData ..> BroadcastingCompany
+WeatherData ..> AgricultureAgency
+WeatherData ..> SportsDisplay
+@enduml

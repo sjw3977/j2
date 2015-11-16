@@ -1,0 +1,12 @@
+@startuml
+
+class ChocolateBoiler {
+  -static instance:ChocolateBoiler
+  -Singleton():void
+  +static getInstance():ChocolateBoiler
+  +fill()
+  +boil()
+  +drain()
+}
+
+@enduml

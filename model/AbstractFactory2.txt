@@ -1,0 +1,113 @@
+@startuml
+
+abstract class Pizza {
+  String name
+  Sauce sauce
+  Daugh daugh
+  Veggies veggies[]
+  Cheese cheese
+  Pepperoni pepperoni
+  abstract void prepare()
+  bake()
+  cut()
+  box()
+  setName(String)
+  getName():String
+  +toString():String
+}
+abstract class PizzaStore {
+  #abstract createPizza(String item):Pizza
+  +orderPizza(String type):Pizza
+}
+class ChicagoPizzaStore {
+  createPizza(String item):Pizza
+}
+class NYPizzaStore {
+  createPizza(String item):Pizza
+}
+interface PizzaIngredientFactory {
+  +createCheese():Cheese
+  +createSauce():Sauce
+  +createDough():Dough
+  +createClam():Clam
+  +createVeggies():Veggies[]
+  +createPepperoni():Pepperoni
+}
+interface Cheese {
+  +toString():String
+}
+interface Clam {
+  +toString():String
+}
+interface Dough {
+  +toString():String
+}
+interface Veggies {
+  +toString():String
+}
+interface Sauce {
+  +toString():String
+}
+interface Pepperoni {
+  +toString():String
+}
+
+PizzaStore -right-> Pizza
+
+Pizza <|-- CheesePizza
+Pizza <|-- PepperoniPizza
+Pizza <|-- VeggiePizza
+Pizza <|-- ClamPizza
+Pizza --> Cheese
+Pizza --> Clam
+Pizza --> Dough
+Pizza --> Veggies
+Pizza --> Sauce
+Pizza --> Pepperoni
+
+PizzaStore <|-- ChicagoPizzaStore
+PizzaStore <|-- NYPizzaStore
+
+PizzaIngredientFactory <|.. ChicagoPizzaIngredientFactory
+PizzaIngredientFactory <|.. NYPizzaIngredientFactory
+PizzaIngredientFactory <.down. ChicagoPizzaStore
+PizzaIngredientFactory <.down. NYPizzaStore
+PizzaIngredientFactory --> Cheese
+PizzaIngredientFactory --> Clam
+PizzaIngredientFactory --> Dough
+PizzaIngredientFactory --> Veggies
+PizzaIngredientFactory --> Sauce
+PizzaIngredientFactory --> Pepperoni
+
+ChicagoPizzaIngredientFactory ..> Cheese
+ChicagoPizzaIngredientFactory ..> Clam
+ChicagoPizzaIngredientFactory ..> Dough
+ChicagoPizzaIngredientFactory ..> Veggies
+ChicagoPizzaIngredientFactory ..> Sauce
+ChicagoPizzaIngredientFactory ..> Pepperoni
+NYPizzaIngredientFactory ..> Cheese
+NYPizzaIngredientFactory ..> Clam
+NYPizzaIngredientFactory ..> Dough
+NYPizzaIngredientFactory ..> Veggies
+NYPizzaIngredientFactory ..> Sauce
+NYPizzaIngredientFactory ..> Pepperoni
+
+Cheese <|.. ReggianoCheese
+Cheese <|.. MozzarellaCheese
+Cheese <|.. ParmesanCheese
+Clam <|.. FreshClams
+Clam <|.. FrozenClams
+Dough <|.. ThickCrustDough
+Dough <|.. ThinCrustDough
+Veggies <|.. Eggplant
+Veggies <|.. Garlic
+Veggies <|.. Mushroom
+Veggies <|.. Onion
+Veggies <|.. RedPepper
+Veggies <|.. BlackOilves
+Veggies <|.. Spinach
+Sauce <|.. MarinaraSauce
+Sauce <|.. PlumTomatoSauce
+Pepperoni <|.. SlicedPepperoni
+
+@enduml

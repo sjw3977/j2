@@ -1,0 +1,29 @@
+@startuml
+
+Duck <|-- MallardDuck
+Duck <|-- ReadHeadDuck
+Duck <|-- RubberDuck
+Duck <|-- DecoyDuck
+
+Flyable <|.. MallardDuck
+Flyable <|.. RedHeadDuck
+
+Quackable <|.. MallardDuck
+Quackable <|.. ReadHeadDuck
+Quackable <|.. RubberDuck
+
+class Duck {
+  -field1
+  +swim()
+  +display()
+}
+
+Interface Flyable {
+    +fly()
+}
+
+Interface Quackable {
+    +quack()
+}
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+
+Client -right- Door
+Door <|-- AutomaticDoor
+Door <|-- KnobDoor
+Door <|-- SlidingDoor
+
+class Door {
+  -isOpen
+  +open()
+}
+
+@enduml
