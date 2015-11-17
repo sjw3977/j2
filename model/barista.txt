@@ -1,0 +1,22 @@
+@startuml
+
+abstract class CaffeineBeverage {
+  +final perpareRecipe()
+  +abstract brew():void
+  +abstract addCondiments():void
+  +boilWater():void
+  +pourInCup():void
+}
+class Coffee {
+  +brew():void
+  +addCondiments():void
+}
+class Tea {
+  +brew():void
+  +addCondiments():void
+}
+
+CaffeineBeverage <|-- Coffee
+CaffeineBeverage <|-- Tea
+
+@enduml
