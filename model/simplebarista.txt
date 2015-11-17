@@ -1,0 +1,19 @@
+@startuml
+
+class Coffee {
+  boilWater()
+  brewCoffeeGrinds()
+  pourInCup()
+  addSugarAndMilk()
+}
+class Tea {
+  boilWater()
+  steepTeaBag()
+  pourInCup()
+  addLemon()
+}
+
+client --> Coffee
+client --> Tea
+
+@enduml

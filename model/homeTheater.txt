@@ -1,0 +1,35 @@
+@startuml
+
+class Amplifier {
+}
+class Tuner {
+}
+class DvdPlayer {
+}
+class Projector {
+}
+Amplifier -left-> Tuner
+Tuner --> Amplifier
+DvdPlayer --> Amplifier
+Amplifier -right-> DvdPlayer
+Projector --> DvdPlayer
+class HomeTheaterFacade {
+  -amp:Amplifier
+  -tuner:Tuner
+  -dvd:DvdPlayer
+  -projector:Projector
+  +HomeTheaterFacade(Amplifier, Tuner, DvdPlayer, Projector)
+  +watchMovie(String):void
+  +endMovie():void
+  +listenToRadio(double):void
+  +endRadio():void
+  +beginStudy()
+  +endStudy()
+}
+Client --> HomeTheaterFacade
+HomeTheaterFacade --> Amplifier
+HomeTheaterFacade --> Tuner
+HomeTheaterFacade --> Projector
+HomeTheaterFacade --> DvdPlayer
+
+@enduml
