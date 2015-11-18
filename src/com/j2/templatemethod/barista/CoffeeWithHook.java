@@ -1,6 +1,6 @@
 package com.j2.templatemethod.barista;
 
-public class CoffeeWithHook extends CaffeinBeverageWithHook {
+public class CoffeeWithHook extends CaffeineBeverageWithHook {
   public void brew() {
     System.out.println("dripping coffee through filter");
   }

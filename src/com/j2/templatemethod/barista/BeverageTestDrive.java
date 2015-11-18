@@ -2,14 +2,28 @@ package com.j2.templatemethod.barista;
 
 public class BeverageTestDrive {
   public static void main(String[] args) {
-    Coffee coffee = new Coffee();
     Tea tea = new Tea();
+    Coffee coffee = new Coffee();
     
     System.out.println("\nMaking tea...");
     tea.prepareRecipe();
     
     System.out.println("\nMaking coffee...");
     coffee.prepareRecipe();
+    
+    TeaWithHook teaHook = new TeaWithHook();
+    CoffeeWithHook coffeeHook = new CoffeeWithHook();
+    
+    System.out.println("\nMaking tea...");
+    teaHook.prepareRecipe();
+    
+    System.out.println("\nMaking coffee...");
+    coffeeHook.prepareRecipe();
+    
+    CaramelMacchiatoWithHook caramelMacchiato = new CaramelMacchiatoWithHook();
+    
+    System.out.println("\nMaking caramel macchiato...");
+    caramelMacchiato.prepareRecipe();
   }
 }
     

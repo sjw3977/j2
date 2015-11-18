@@ -1,6 +1,6 @@
 @startuml
 
-class CoffeineBeverage {
+class CaffeineBeverage {
   prepareRecipe()
   boilWater()
   pourInCup()
@@ -16,7 +16,7 @@ class Tea {
   addLemon()
 }
 
-CoffeineBeverage <|-- Coffee
-CoffeineBeverage <|-- Tea
+CaffeineBeverage <|-- Coffee
+CaffeineBeverage <|-- Tea
 
 @enduml

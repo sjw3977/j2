@@ -1,6 +1,6 @@
 package com.j2.templatemethod.barista;
 
-public class Tea extends CaffeinBeverage {
+public class Tea extends CaffeineBeverage {
   public void brew() {
     System.out.println("Steeping the tea");
   }

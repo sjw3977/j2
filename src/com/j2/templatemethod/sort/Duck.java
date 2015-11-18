@@ -17,7 +17,7 @@ public class Duck implements Comparable {
     Duck otherDuck = (Duck)object;
     if (this.weight < otherDuck.weight) {
       return -1;
-    }else if (this.weight = otherDuck.weight) {
+    }else if (this.weight == otherDuck.weight) {
       return 0;
     }else {
       return 1;
