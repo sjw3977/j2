@@ -1,0 +1,14 @@
+@startuml
+
+abstract class AbstractClass {
+  +final templateMethod():void
+  +abstract primitiveOperation1():void
+  +abstract primitiveOperation2():void
+  +final concreteOperation():void
+  +hook(}:void
+}
+class ConcreteClass
+
+AbstractClass <|-- ConcreteClass
+
+@enduml

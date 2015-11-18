@@ -1,0 +1,17 @@
+@startuml
+
+interface java.lang.Comparerable {
+  +compareTo():int
+}
+class java.util.arrays {
+  +sort(Object[]):void
+}
+class Duck {
+  weight:int
+  +compareTo(Object):int
+}
+
+java.lang.Comparerable <|.. Duck
+Duck ..> java.util.arrays
+
+@enduml
