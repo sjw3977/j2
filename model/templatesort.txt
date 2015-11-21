@@ -1,6 +1,6 @@
 @startuml
 
-interface java.lang.Comparerable {
+interface java.lang.Comparable {
   +compareTo():int
 }
 class java.util.arrays {
@@ -11,7 +11,7 @@ class Duck {
   +compareTo(Object):int
 }
 
-java.lang.Comparerable <|.. Duck
+java.lang.Comparable <|.. Duck
 Duck ..> java.util.arrays
 
 @enduml
