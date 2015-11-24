@@ -7,11 +7,14 @@ class java.util.arrays {
   +sort(Object[]):void
 }
 class Duck {
+  name:String
   weight:int
+  +toString():String
   +compareTo(Object):int
 }
 
 java.lang.Comparable <|.. Duck
-Duck ..> java.util.arrays
+client ..> java.util.arrays
+client -right-> Duck
 
 @enduml
