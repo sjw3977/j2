@@ -1,0 +1,16 @@
+@startuml
+title before
+class ArrayList {
+  +get():E
+  +size():int
+}
+class Array
+
+PancakeHouseMenu --> ArrayList:size()
+PancakeHouseMenu --> ArrayList:get(int)
+DinerMenu --> Array:length
+DinerMenu --> Array:index
+
+Client --> PancakeHouseMenu:getMenuItems()
+Client --> DinerMenu:getMenuItems()
+@enduml
