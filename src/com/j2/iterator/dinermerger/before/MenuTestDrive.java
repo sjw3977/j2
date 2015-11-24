@@ -8,7 +8,7 @@ public class MenuTestDrive {
   
   public static void printMenu() {
     PancakeHouseMenu p = new PancakeHouseMenu();
-    DinerMenu d = new DinerMenu();
+    DinerMenu dinerMenu = new DinerMenu();
     
     ArrayList breakfastItems = p.getMenuItems();
     
@@ -16,14 +16,16 @@ public class MenuTestDrive {
       MenuItem menuItem = (MenuItem)breakfastItems.get(i);
       System.out.print(menuItem.getName());
       System.out.println("\t\t" + menuItem.getPrice());
+      System.out.println("\t" + menuItem.getDescription());
     }
     
-    MenuItem[] dItems = d.getMenuItems();
+    MenuItem[] lunchItems = dinerMenu.getMenuItems();
         
-    for (int i = 0; i < dItems.length; i++) {
-      MenuItem menuItem = dItems[i];
+    for (int i = 0; i < lunchItems.length; i++) {
+      MenuItem menuItem = lunchItems[i];
       System.out.print(menuItem.getName());
       System.out.println("\t\t" + menuItem.getPrice());
+      System.out.println("\t" + menuItem.getDescription());
     }
   }
 }
