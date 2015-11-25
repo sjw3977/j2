@@ -1,5 +1,4 @@
 package com.j2.iterator.dinermerger.after;
-import com.j2.iterator.dinermerger.before.MenuItem;
 
 public class DinerMenu implements Menu {
   static final int MAX_ITEMS = 3;
@@ -8,7 +7,7 @@ public class DinerMenu implements Menu {
   
   public DinerMenu() {
     menuItems = new MenuItem[MAX_ITEMS];
-    addItem("Ã¤½Ä BLT", "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99);
+    addItem("Vegetarian BLT", "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99);
     addItem("BLT", "Bacon with lettuce & tomato on whole wheat", false, 2.99);
     addItem("Soup of the day", "Soup of the day, with a side of potato salad", false, 3.29);
   }
