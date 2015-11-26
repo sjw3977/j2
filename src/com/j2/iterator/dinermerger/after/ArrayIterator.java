@@ -14,7 +14,7 @@ public class ArrayIterator implements Iterator {
     return menuItem;
   }
   
-  public boolean hasnext() {
+  public boolean hasNext() {
     if (position >= items.length || items[position] == null) {
       return false;
     } else {

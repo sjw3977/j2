@@ -15,7 +15,7 @@ public class ArrayListIterator implements Iterator {
     return object;
   }
   
-  public boolean hasnext() {
+  public boolean hasNext() {
     if (position >= items.size()) {
       return false;
     } else {

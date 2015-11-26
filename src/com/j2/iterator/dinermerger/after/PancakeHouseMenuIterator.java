@@ -9,7 +9,7 @@ public class PancakeHouseMenuIterator implements Iterator {
     this.items = items;
   }
     
-  public boolean hasnext() {
+  public boolean hasNext() {
     if (position >= items.size()) {
       return false;
     } else {
