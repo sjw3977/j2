@@ -1,0 +1,14 @@
+@startuml
+
+interface State
+class Context {
+  -state:State
+  +setState(State):void
+  +getState():State
+}
+State <|.. ConcreteStateA
+State <|.. ConcreteStateB
+Context -right-> State
+ConcreteStateA ..> Context
+
+@enduml
