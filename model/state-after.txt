@@ -6,7 +6,7 @@ interface State {
   +turnCrank()
   +dispense()
 }
-class Context {
+class GumballMachine {
   -state:State
   +setState(State):void
   +getState():State
@@ -15,7 +15,7 @@ State <|.. HasQuarter
 State <|.. NoQuarter
 State <|.. SoldOut
 State <|.. Sold
-Context -right-> State
-HasQuarter --> Context
+GumballMachine -right-> State
+HasQuarter --> GumballMachine
 
 @enduml
