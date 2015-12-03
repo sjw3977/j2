@@ -1,4 +1,5 @@
 package com.j2.state.gumballstate;
+import java.util.Random;
 
 public class NoQuarterState implements State {
   GumballMachine gumballMachine;
@@ -8,8 +9,15 @@ public class NoQuarterState implements State {
   }
   
   public void insertQuarter() {
-    System.out.println("You insert a quarter");
-    gumballMachine.setState(gumballMachine.getHasQuarterState());
+    Random insertQ = new Random(System.currentTimeMillis());
+    int error = insertQ.nextInt(10);
+    if (error == 0) {
+      System.out.println("You insert a quarter wrong");
+      gumballMachine.setState(gumballMachine.getErrorState());
+    } else {
+      System.out.println("You insert a quarter");
+      gumballMachine.setState(gumballMachine.getHasQuarterState());
+    }
   }
   
   public void ejectQuarter() {
